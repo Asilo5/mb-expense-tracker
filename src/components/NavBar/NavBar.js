@@ -1,4 +1,5 @@
 import React from 'react';
+import './NavBar.css';
 
 import UserSection from './../UserSection/UserSection';
 
