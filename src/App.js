@@ -8,18 +8,18 @@ import ExpensesSection from './components/ExpensesSection/ExpensesSection';
 
 const App = () => {
   const [expense, setExpense] = React.useState([
-    { expenseID: 1, expense: 49.90, locationName: 'Whole Foods', date: '2020-15-03', accountId: '', categoryId: ''}
+    { expenseID: 1, expense: 49.90, locationName: 'Whole Foods', date: '2020-15-03', accountId: '20', categoryId: '15'}
   ]);
   const [account, setAccount] = React.useState([
-     { accountID: 20, accountTitle: 'groceries', color: '', type: 'bank account' }
+     { accountID: 20, accountTitle: 'London Trip', color: '#9381FF', type: 'bank account' }
   ]);
   const [category, setCategory] = React.useState([
-     { categoryID: 15, categoryTitle: 'groceries', color: '' }
+     { categoryID: 15, categoryTitle: 'groceries', color: '#FFD8BE' }
   ]);
   const colorTypes = [
-    {type: 'bank account', color: ''},
-    {type: 'card', color: ''},
-    {type: 'credit', color: ''}
+    {type: 'bank account', color: '#9DC4B5'},
+    {type: 'card', color: '#9DC4B5'},
+    {type: 'credit', color: '#FAC9B8'}
   ];
 
   const addExpense = (expense) => {
@@ -39,10 +39,10 @@ const App = () => {
       <NavBar />
       <section>
          <CategorySection categories={category} addCategory={addCategory} />
+         <ExpensesSection expenses={expense} addExpense={addExpense} />
       </section>
       <section>
         <AccountSection accounts={account} addAccount={addAccount}/>
-        <ExpensesSection expenses={expense} addExpense={addExpense} />
       </section>
     </section>
   );
