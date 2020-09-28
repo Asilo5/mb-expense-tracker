@@ -37,11 +37,11 @@ const App = () => {
   return (
     <section className='App'>
       <NavBar />
-      <section>
+      <section className='cat_expenses_section'>
          <CategorySection categories={category} addCategory={addCategory} />
          <ExpensesSection expenses={expense} addExpense={addExpense} />
       </section>
-      <section>
+      <section className='app_account_section'>
         <AccountSection accounts={account} addAccount={addAccount}/>
       </section>
     </section>
