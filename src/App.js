@@ -1,25 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import NavBar from './components/NavBar/NavBar';
+import CategorySection from './components/CategorySection/CategorySection';
+import AccountSection from './components/AccountSection/AccountSection';
+import ExpensesSection from './components/ExpensesSection/ExpensesSection';
+
+const App = () => {
+  const [expense, setExpense] = React.useState([
+    { expenseID: 1, expense: 49.90, locationName: 'Whole Foods', date: '2020-15-03', accountId: '20', categoryId: '15'}
+  ]);
+  const [account, setAccount] = React.useState([
+     { accountID: 20, accountTitle: 'London Trip', color: '#9381FF', type: 'bank account' }
+  ]);
+  const [category, setCategory] = React.useState([
+     { categoryID: 15, categoryTitle: 'groceries', color: '#FFD8BE' }
+  ]);
+  const colorTypes = [
+    {type: 'bank account', color: '#9DC4B5'},
+    {type: 'card', color: '#9DC4B5'},
+    {type: 'credit', color: '#FAC9B8'}
+  ];
+
+  const addExpense = (expense) => {
+    setExpense(expense);
+  }
+
+  const addAccount = (account) => {
+    setAccount(account);
+  }
+
+  const addCategory = (category) => {
+    setCategory(category);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='App'>
+      <NavBar />
+      <section className='cat_expenses_section'>
+         <CategorySection categories={category} addCategory={addCategory} />
+         <ExpensesSection expenses={expense} addExpense={addExpense} />
+      </section>
+      <section className='app_account_section'>
+        <AccountSection accounts={account} addAccount={addAccount}/>
+      </section>
+    </section>
   );
 }
 

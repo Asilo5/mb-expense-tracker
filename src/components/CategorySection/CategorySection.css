@@ -1,0 +1,30 @@
+.category_section {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.category_list {
+  display: flex;
+}
+
+.category_ {
+  padding: 2px;
+  border-radius: 20px;
+  margin: 5px;
+}
+
+.category_ > p {
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+}
+
+.category_list > button {
+   border-radius: 60%;
+   padding: 10px;
+   background-color: transparent;
+   border-color: transparent;
+   font-size: 30px;
+   font-weight: bold;
+   cursor: pointer;
+}
