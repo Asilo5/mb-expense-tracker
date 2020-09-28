@@ -1,5 +1,6 @@
 .category_section {
   padding: 20px;
+  flex-grow: 1;
 }
 
 .category_list {
